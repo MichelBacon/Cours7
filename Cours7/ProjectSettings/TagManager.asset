@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SoundPlayer
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

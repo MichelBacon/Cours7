@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnnemiCube : Ennemi {
+public class EnnemiSlime : Ennemi
+{
 
     GameObject player;
     public float speed = 5;
@@ -10,16 +11,19 @@ public class EnnemiCube : Ennemi {
     AudioSource audioSource;
     public AudioMusic audioMusic;
     public GameObject particleSystemDeath;
+    public GameObject ennemiSphere;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
         rbd = GetComponent<Rigidbody>();
         audioSource = GameObject.FindGameObjectWithTag("SoundPlayer").GetComponent<AudioSource>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         FollowPlayer();
     }
 
@@ -32,6 +36,7 @@ public class EnnemiCube : Ennemi {
     {
         audioSource.PlayOneShot(audioMusic.soundToPlay);
         Instantiate(particleSystemDeath, gameObject.transform.position, Quaternion.identity);
+        Instantiate(ennemiSphere, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 }
