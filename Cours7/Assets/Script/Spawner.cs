@@ -39,7 +39,6 @@ public class Spawner : MonoBehaviour {
         int randomSpawnPointIndex = Random.Range(0, countSpawnPoint);
         SpawnPoint spawnPointRandomlySelected = spawnPoints[randomSpawnPointIndex];
         GameObject newCube = Instantiate(ennemiPrefab,spawnPointRandomlySelected.GetPosition(), spawnPointRandomlySelected.transform.rotation);
-        GameObject newSlime = Instantiate(ennemiSlimePrefab, spawnPointRandomlySelected.GetPosition(), spawnPointRandomlySelected.transform.rotation);
     }
     private void SpawnSlime()
     {
